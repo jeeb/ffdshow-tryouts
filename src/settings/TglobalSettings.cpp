@@ -55,7 +55,7 @@ TglobalSettingsBase::TglobalSettingsBase(const Tconfig *Iconfig,int Imode,const 
         IDFF_isBlacklist      ,&TglobalSettingsBase::isBlacklist      ,0,0,_l(""),0,
         _l("isBlacklist"),1,
         IDFF_isWhitelist      ,&TglobalSettingsBase::isWhitelist      ,0,0,_l(""),0,
-        _l("isWhitelist"),1,
+        _l("isWhitelist"),0,
         IDFF_compManagerMode  ,&TglobalSettingsBase::compOnLoadMode   ,1,4,_l(""),0,
         NULL,1,
         IDFF_isCompMgr        ,&TglobalSettingsBase::isCompMgr        ,0,0,_l(""),0,
@@ -459,26 +459,26 @@ int TglobalSettingsDecVideo::getDefault(int id)
 
 void TglobalSettingsDecVideo::reg_op_codec(TregOp &t,TregOp *t2)
 {
-    _reg_op_codec(IDFF_xvid,t,t2,_l("xvid"),xvid,0);
-    _reg_op_codec(IDFF_div3,t,t2,_l("div3"),div3,0);
-    _reg_op_codec(IDFF_dx50,t,t2,_l("dx50"),dx50,0);
-    _reg_op_codec(IDFF_mp4v,t,t2,_l("mp4v"),mp4v,0);
-    _reg_op_codec(IDFF_mp43,t,t2,_l("mp43"),mp43,0);
-    _reg_op_codec(IDFF_mp42,t,t2,_l("mp42"),mp42,0);
-    _reg_op_codec(IDFF_mp41,t,t2,_l("mp41"),mp41,0);
-    _reg_op_codec(IDFF_h261,t,t2,_l("h261"),h261,0);
-    _reg_op_codec(IDFF_h263,t,t2,_l("h263"),h263,0);
-    _reg_op_codec(IDFF_h264,t,t2,_l("h264"),h264,0);
+    _reg_op_codec(IDFF_xvid,t,t2,_l("xvid"),xvid,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_div3,t,t2,_l("div3"),div3,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_dx50,t,t2,_l("dx50"),dx50,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_mp4v,t,t2,_l("mp4v"),mp4v,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_mp43,t,t2,_l("mp43"),mp43,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_mp42,t,t2,_l("mp42"),mp42,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_mp41,t,t2,_l("mp41"),mp41,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_h261,t,t2,_l("h261"),h261,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_h263,t,t2,_l("h263"),h263,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_h264,t,t2,_l("h264"),h264,IDFF_MOVIE_LAVC);
     _reg_op_codec(IDFF_wmv1,t,t2,_l("wmv1"),wmv1,0);
     _reg_op_codec(IDFF_wmv2,t,t2,_l("wmv2"),wmv2,0);
     _reg_op_codec(IDFF_wmv3,t,t2,_l("wmv3"),wmv3,0);
     _reg_op_codec(IDFF_wvc1,t,t2,_l("wvc1"),wvc1,0);
     _reg_op_codec(IDFF_mss2,t,t2,_l("mss2"),mss2,0);
     _reg_op_codec(IDFF_wvp2,t,t2,_l("wvp2"),wvp2,0);
-    _reg_op_codec(IDFF_vp5 ,t,t2,_l("vp5") ,vp5,0);
-    _reg_op_codec(IDFF_vp6 ,t,t2,_l("vp6") ,vp6,0);
-    _reg_op_codec(IDFF_vp6f,t,t2,_l("vp6f"),vp6f,0);
-    _reg_op_codec(IDFF_vp8 ,t,t2,_l("vp8") ,vp8,0);
+    _reg_op_codec(IDFF_vp5 ,t,t2,_l("vp5") ,vp5,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_vp6 ,t,t2,_l("vp6") ,vp6,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_vp6f,t,t2,_l("vp6f"),vp6f,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_vp8 ,t,t2,_l("vp8") ,vp8,IDFF_MOVIE_LAVC);
     _reg_op_codec(IDFF_cavs,t,t2,_l("cavs"),cavs,0);
     _reg_op_codec(IDFF_rawv,t,t2,
                   filtermode & IDFF_FILTERMODE_VIDEOSUBTITLES ? NULL :
@@ -490,43 +490,43 @@ void TglobalSettingsDecVideo::reg_op_codec(TregOp &t,TregOp *t2)
     _reg_op_codec(IDFF_mpegAVI,t,t2,_l("mpegAVI"),mpegAVI,0);
     _reg_op_codec(IDFF_em2v,t,t2,_l("em2v"),em2v,0);
     _reg_op_codec(IDFF_avrn,t,t2,_l("avrn"),avrn,0);
-    _reg_op_codec(IDFF_mjpg,t,t2,_l("mjpg"),mjpg,0);
+    _reg_op_codec(IDFF_mjpg,t,t2,_l("mjpg"),mjpg,IDFF_MOVIE_LAVC);
     _reg_op_codec(IDFF_dvsd,t,t2,_l("dvsd"),dvsd,0);
     _reg_op_codec(IDFF_cdvc,t,t2,_l("cdvc"),cdvc,0);
-    _reg_op_codec(IDFF_hfyu,t,t2,_l("hfyu"),hfyu,0);
+    _reg_op_codec(IDFF_hfyu,t,t2,_l("hfyu"),hfyu,IDFF_MOVIE_LAVC);
     _reg_op_codec(IDFF_cyuv,t,t2,_l("cyuv"),cyuv,0);
-    _reg_op_codec(IDFF_theo,t,t2,_l("theo"),theo,0);
+    _reg_op_codec(IDFF_theo,t,t2,_l("theo"),theo,IDFF_MOVIE_LAVC);
     _reg_op_codec(IDFF_fvfw,t,t2,_l("fvfw"),fvfw,IDFF_MOVIE_LAVC);
     _reg_op_codec(IDFF_asv1,t,t2,_l("asv1"),asv1,0);
     _reg_op_codec(IDFF_vcr1,t,t2,_l("vcr1"),vcr1,0);
-    _reg_op_codec(IDFF_svq1,t,t2,_l("svq1"),svq1,0);
-    _reg_op_codec(IDFF_svq3,t,t2,_l("svq3"),svq3,0);
-    _reg_op_codec(IDFF_qtrpza,t,t2,_l("qtrpza"),qtrpza,0);
+    _reg_op_codec(IDFF_svq1,t,t2,_l("svq1"),svq1,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_svq3,t,t2,_l("svq3"),svq3,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_qtrpza,t,t2,_l("qtrpza"),qtrpza,IDFF_MOVIE_LAVC);
     _reg_op_codec(IDFF_cram,t,t2,_l("cram"),cram,0);
-    _reg_op_codec(IDFF_rt21,t,t2,_l("rt21"),rt21,0);
-    _reg_op_codec(IDFF_iv32,t,t2,_l("iv32"),iv32,0);
+    _reg_op_codec(IDFF_rt21,t,t2,_l("rt21"),rt21,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_iv32,t,t2,_l("iv32"),iv32,IDFF_MOVIE_LAVC);
 	_reg_op_codec(IDFF_iv50,t,t2,_l("iv50"),iv50,0);
 	_reg_op_codec(IDFF_i263,t,t2,_l("i263"),i263,0);
     _reg_op_codec(IDFF_cvid,t,t2,_l("cvid"),cvid,0);
     _reg_op_codec(IDFF_rv10,t,t2,_l("rv10"),rv10,0);
-    _reg_op_codec(IDFF_rv30,t,t2,_l("rv30"),rv30,0);
-    _reg_op_codec(IDFF_rv40,t,t2,_l("rv40"),rv40,0);
+    _reg_op_codec(IDFF_rv30,t,t2,_l("rv30"),rv30,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_rv40,t,t2,_l("rv40"),rv40,IDFF_MOVIE_LAVC);
     _reg_op_codec(IDFF_ffv1,t,t2,_l("ffv1"),ffv1,IDFF_MOVIE_LAVC);
-    _reg_op_codec(IDFF_vp3 ,t,t2,_l("vp3") ,vp3 ,0);
+    _reg_op_codec(IDFF_vp3 ,t,t2,_l("vp3") ,vp3 ,IDFF_MOVIE_LAVC);
     _reg_op_codec(IDFF_rle ,t,t2,_l("rle") ,rle ,0);
     _reg_op_codec(IDFF_avisV,t,t2,_l("avis"),avis,IDFF_MOVIE_AVIS);
-    _reg_op_codec(IDFF_mszh,t,t2,_l("mszh"),mszh,0);
-    _reg_op_codec(IDFF_zlib,t,t2,_l("zlib"),zlib,0);
-    _reg_op_codec(IDFF_flv1,t,t2,_l("flv1"),flv1,0);
+    _reg_op_codec(IDFF_mszh,t,t2,_l("mszh"),mszh,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_zlib,t,t2,_l("zlib"),zlib,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_flv1,t,t2,_l("flv1"),flv1,IDFF_MOVIE_LAVC);
     _reg_op_codec(IDFF_8bps,t,t2,_l("8bps"),_8bps,0);
-    _reg_op_codec(IDFF_png1,t,t2,_l("png1"),png1,0);
-    _reg_op_codec(IDFF_qtrle,t,t2,_l("qtrle"),qtrle,0);
-    _reg_op_codec(IDFF_duck,t,t2,_l("duck"),duck,0);
+    _reg_op_codec(IDFF_png1,t,t2,_l("png1"),png1,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_qtrle,t,t2,_l("qtrle"),qtrle,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_duck,t,t2,_l("duck"),duck,IDFF_MOVIE_LAVC);
     _reg_op_codec(IDFF_tscc,t,t2,_l("tscc"),tscc,0);
     _reg_op_codec(IDFF_qpeg,t,t2,_l("qpeg"),qpeg,0);
     _reg_op_codec(IDFF_loco,t,t2,_l("loco"),loco,0);
     _reg_op_codec(IDFF_wnv1,t,t2,_l("wnv1"),wnv1,0);
-    _reg_op_codec(IDFF_cscd,t,t2,_l("cscd"),cscd,0);
+    _reg_op_codec(IDFF_cscd,t,t2,_l("cscd"),cscd,IDFF_MOVIE_LAVC);
     _reg_op_codec(IDFF_zmbv,t,t2,_l("zmbv"),zmbv,0);
     _reg_op_codec(IDFF_ulti,t,t2,_l("ulti"),ulti,0);
     _reg_op_codec(IDFF_vixl,t,t2,_l("vixl"),vixl,0);
@@ -1120,33 +1120,33 @@ void TglobalSettingsDecAudio::reg_op_codec(TregOp &t,TregOp *t2)
 {
     _reg_op_codec(IDFF_wma7      ,t,t2,_l("wma1")      ,wma1      ,0);
     _reg_op_codec(IDFF_wma8      ,t,t2,_l("wma2")      ,wma2      ,0);
-    _reg_op_codec(IDFF_mp2       ,t,t2,_l("mp2")       ,mp2       ,0);
-    _reg_op_codec(IDFF_mp3       ,t,t2,_l("mp3")       ,mp3       ,0);
-    _reg_op_codec(IDFF_ac3       ,t,t2,_l("ac3")       ,ac3       ,0);
-    _reg_op_codec(IDFF_truehd    ,t,t2,_l("truehd")    ,truehd    ,0);
-    _reg_op_codec(IDFF_mlp       ,t,t2,_l("mlp")       ,mlp       ,0);
-    _reg_op_codec(IDFF_eac3      ,t,t2,_l("eac3")      ,eac3      ,0);
-    _reg_op_codec(IDFF_dts       ,t,t2,_l("dts")       ,dts       ,0);
-    _reg_op_codec(IDFF_aac       ,t,t2,_l("aac")       ,aac       ,0);
-    _reg_op_codec(IDFF_amr       ,t,t2,_l("amr")       ,amr       ,0);
+    _reg_op_codec(IDFF_mp2       ,t,t2,_l("mp2")       ,mp2       ,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_mp3       ,t,t2,_l("mp3")       ,mp3       ,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_ac3       ,t,t2,_l("ac3")       ,ac3       ,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_truehd    ,t,t2,_l("truehd")    ,truehd    ,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_mlp       ,t,t2,_l("mlp")       ,mlp       ,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_eac3      ,t,t2,_l("eac3")      ,eac3      ,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_dts       ,t,t2,_l("dts")       ,dts       ,IDFF_MOVIE_LIBDTS);
+    _reg_op_codec(IDFF_aac       ,t,t2,_l("aac")       ,aac       ,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_amr       ,t,t2,_l("amr")       ,amr       ,IDFF_MOVIE_LAVC);
     _reg_op_codec(IDFF_iadpcm    ,t,t2,_l("iadpcm")    ,iadpcm    ,0);
     _reg_op_codec(IDFF_msadpcm   ,t,t2,_l("msadpcm")   ,msadpcm   ,0);
     _reg_op_codec(IDFF_otherAdpcm,t,t2,_l("otherAdpcm"),otherAdpcm,0);
     _reg_op_codec(IDFF_law       ,t,t2,_l("law")       ,law       ,0);
     _reg_op_codec(IDFF_gsm       ,t,t2,_l("gsm")       ,gsm       ,0);
-    _reg_op_codec(IDFF_lpcm      ,t,t2,_l("lpcm")      ,lpcm      ,0);
-    _reg_op_codec(IDFF_flac      ,t,t2,_l("flac")      ,flac      ,0);
-    _reg_op_codec(IDFF_tta       ,t,t2,_l("tta")       ,tta       ,0);
-    _reg_op_codec(IDFF_qdm2      ,t,t2,_l("qdm2")      ,qdm2      ,0);
-    _reg_op_codec(IDFF_mace      ,t,t2,_l("mace")      ,mace      ,0);
+    _reg_op_codec(IDFF_lpcm      ,t,t2,_l("lpcm")      ,lpcm      ,IDFF_MOVIE_RAW);
+    _reg_op_codec(IDFF_flac      ,t,t2,_l("flac")      ,flac      ,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_tta       ,t,t2,_l("tta")       ,tta       ,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_qdm2      ,t,t2,_l("qdm2")      ,qdm2      ,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_mace      ,t,t2,_l("mace")      ,mace      ,IDFF_MOVIE_LAVC);
     _reg_op_codec(IDFF_truespeech,t,t2,_l("truespeech"),truespeech,0);
-    _reg_op_codec(IDFF_vorbis    ,t,t2,_l("vorbis")    ,vorbis    ,0);
+    _reg_op_codec(IDFF_vorbis    ,t,t2,_l("vorbis")    ,vorbis    ,IDFF_MOVIE_LAVC);
     _reg_op_codec(IDFF_ra        ,t,t2,_l("ra")        ,ra        ,0);
     _reg_op_codec(IDFF_imc       ,t,t2,_l("imc")       ,imc       ,0);
-    _reg_op_codec(IDFF_atrac3    ,t,t2,_l("atrac3")    ,atrac3    ,0);
-    _reg_op_codec(IDFF_cook      ,t,t2,_l("cook")      ,cook      ,0);
-    _reg_op_codec(IDFF_nellymoser,t,t2,_l("nellymoser"),nellymoser,0);
-    _reg_op_codec(IDFF_wavpack   ,t,t2,_l("wavpack")   ,wavpack   ,0);
+    _reg_op_codec(IDFF_atrac3    ,t,t2,_l("atrac3")    ,atrac3    ,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_cook      ,t,t2,_l("cook")      ,cook      ,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_nellymoser,t,t2,_l("nellymoser"),nellymoser,IDFF_MOVIE_LAVC);
+    _reg_op_codec(IDFF_wavpack   ,t,t2,_l("wavpack")   ,wavpack   ,IDFF_MOVIE_LAVC);
 	_reg_op_codec(IDFF_qtpcm     ,t,t2,_l("qtpcm")     ,qtpcm     ,0);
     _reg_op_codec(IDFF_avisA     ,t,t2,_l("avis")      ,avis      ,IDFF_MOVIE_AVIS);
     _reg_op_codec(IDFF_rawa      ,t,t2,filtermode&IDFF_FILTERMODE_AUDIORAW?_l("raw_rawa"):_l("rawa"),rawa,filtermode&IDFF_FILTERMODE_AUDIORAW?IDFF_MOVIE_RAW:0);
