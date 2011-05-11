@@ -13,7 +13,11 @@
 
 :NoSubWCRev
 @echo NoSubWCRev
-@echo #define SVN_REVISION 0 > src\svn_version.h
-@echo #define BUILD_YEAR 2010 >> src\svn_version.h
-@echo #define BUILD_MONTH 1 >> src\svn_version.h
-@echo #define BUILD_DAY 1 >> src\svn_version.h
+@echo #define SVN_REVISION 3844 > src\svn_version.h
+@echo #define BUILD_YEAR 2011 >> src\svn_version.h
+@echo #define BUILD_MONTH 5 >> src\svn_version.h
+@echo #define BUILD_DAY 11 >> src\svn_version.h
+@echo #define ACTUAL_BUILD_YEAR 2011 >> src\svn_version.h
+@echo #define ACTUAL_BUILD_MONTH 5 >> src\svn_version.h
+@echo #define ACTUAL_BUILD_DAY 11 >> src\svn_version.h
+@echo #define ACTUAL_BUILD_TIME 15:20:00 >> src\svn_version.h
