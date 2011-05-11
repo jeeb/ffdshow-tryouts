@@ -73,7 +73,7 @@ TmixerSettings::TmixerSettings(TintStrColl *Icoll,TfilterIDFFs *filters):Tfilter
 {
     static const TintOptionT<TmixerSettings> iopts[]= {
         IDFF_isMixer          ,&TmixerSettings::is             ,0,0,_l(""),1,
-        _l("isMixer"),0,
+        _l("isMixer"),1,
         IDFF_showMixer        ,&TmixerSettings::show           ,0,0,_l(""),1,
         _l("showMixer"),1,
         IDFF_orderMixer       ,&TmixerSettings::order          ,1,1,_l(""),1,
@@ -81,7 +81,7 @@ TmixerSettings::TmixerSettings(TintStrColl *Icoll,TfilterIDFFs *filters):Tfilter
         IDFF_mixerOut         ,&TmixerSettings::out            ,0,24,_l(""),1,
         _l("mixerOut"),1,
         IDFF_normalizeMatrix  ,&TmixerSettings::normalizeMatrix,0,0,_l(""),1,
-        _l("mixerNormalizeMatrix"),1,
+        _l("mixerNormalizeMatrix"),0,
         IDFF_mixerExpandStereo,&TmixerSettings::expandStereo   ,0,0,_l(""),1,
         _l("mixerExpandStereo2"),0,
         IDFF_mixerVoiceControl,&TmixerSettings::voiceControl   ,0,0,_l(""),1,
