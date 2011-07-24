@@ -39,7 +39,7 @@ public:
     YUVcolorA sppal[16];
     bool fsppal;
     bool spon;
-    TspuPlane* allocPlanes(const CRect &r, uint64_t csp);
+    TspuPlane* allocPlanes(const CRect &r, int csp);
 
     static const char* parseTimestamp(const char* &line,int &ms);
 };
@@ -48,7 +48,7 @@ struct TsubtitleDVD :public Tsubtitle {
 private:
     bool forced;
 protected:
-    uint64_t csp;
+    int csp;
     TsubtitleDVDparent *parent;
     TbyteBuffer data;
     virtual bool parse(void);

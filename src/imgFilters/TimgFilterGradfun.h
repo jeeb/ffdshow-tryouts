@@ -21,7 +21,7 @@ virtual GradFunContext *configure (float threshold, int radius, TffPict &pict);
 virtual void filter (GradFunContext *gradFunContext, uint8_t *src[4], TffPict &pict);
 
 protected:
-virtual uint64_t getSupportedInputColorspaces(const TfilterSettingsVideo *cfg) const
+virtual int getSupportedInputColorspaces(const TfilterSettingsVideo *cfg) const
 {
     return FF_CSPS_MASK_YUV_PLANAR;
 }
