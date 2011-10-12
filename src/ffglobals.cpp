@@ -831,10 +831,7 @@ bool decodeH264SPS(const unsigned char *hdr,size_t len,TffPictBase &pict)
         if (sps->chroma_format_idc == 1 && sps->bit_depth_luma == 10) pict.csp = FF_CSP_420P10;
         if (sps->chroma_format_idc == 3 && sps->bit_depth_luma == 8) pict.csp = FF_CSP_444P;
         if (sps->chroma_format_idc == 3 && sps->bit_depth_luma == 10) pict.csp = FF_CSP_444P10;
-        if (sps->bit_depth_chroma != sps->bit_depth_luma) {
-            pict.csp = FF_CSP_UNSUPPORTED;
-            return false;
-        }
+        if (sps->bit_depth_chroma != sps->bit_depth_luma) pict.csp = FF_CSP_UNSUPPORTED;
 #if defined(WIN64)
         if (sps->bit_depth_luma > 8) {
             pict.csp = FF_CSP_UNSUPPORTED;
