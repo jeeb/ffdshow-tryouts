@@ -334,6 +334,14 @@ uint64_t csp_bestMatch(uint64_t inCSP,uint64_t wantedCSPS,int *rank)
         case FF_CSP_420P: {
             static const uint64_t best[FF_CSPS_NUM]= {
                 FF_CSP_NV12 ,
+                FF_CSP_YUY2 ,
+                FF_CSP_UYVY ,
+                FF_CSP_YVYU ,
+                FF_CSP_VYUY ,
+                FF_CSP_422P ,
+                FF_CSP_444P ,
+                FF_CSP_411P ,
+                FF_CSP_410P ,
                 FF_CSP_ABGR ,
                 FF_CSP_RGBA ,
                 FF_CSP_BGR32,
@@ -344,14 +352,6 @@ uint64_t csp_bestMatch(uint64_t inCSP,uint64_t wantedCSPS,int *rank)
                 FF_CSP_RGB16,
                 FF_CSP_BGR15,
                 FF_CSP_RGB15,
-                FF_CSP_YUY2 ,
-                FF_CSP_UYVY ,
-                FF_CSP_YVYU ,
-                FF_CSP_VYUY ,
-                FF_CSP_422P ,
-                FF_CSP_444P ,
-                FF_CSP_411P ,
-                FF_CSP_410P ,
                 FF_CSP_NULL
             };
             bestcsps=best;
